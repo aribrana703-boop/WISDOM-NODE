@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WISDOM NODES — Server</title>
+  <style>
+    :root{
+      --sky:#cbeefd; --grass:#7ec850; --card:#fff; --text:#223; --muted:#446; --dirt:#b07a2f; --accent:#49a14a
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background:var(--sky);color:var(--text)
+    }
+    header{
+      background:linear-gradient(0deg,var(--grass),#77c04a);
+      padding:14px 18px;border-bottom:4px solid var(--dirt);
+      display:flex;align-items:center;justify-content:space-between
+    }
+    .logo{font-family:'Press Start 2P',monospace;color:#fff}
+    nav a{
+      color:#063;text-decoration:none;padding:8px 10px;
+      background:rgba(255,255,255,0.06);border-radius:6px;font-weight:700
+    }
+    main{padding:26px}
+    h2,h3{font-family:'Press Start 2P',monospace;color:#083d00;text-align:center}
+    .server-ip{
+      text-align:center;background:var(--card);padding:16px;border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.06);max-width:500px;margin:0 auto 20px
+    }
+    .server-ip button{
+      padding:8px 12px;margin-top:8px;background:var(--accent);border:none;color:#fff;
+      font-weight:700;border-radius:6px;cursor:pointer
+    }
+    .features{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:12px;max-width:1100px;margin:0 auto
+    }
+    .card{
+      background:var(--card);padding:14px;border-radius:10px;
+      box-shadow:0 6px 18px rgba(34,34,34,0.06);border:2px solid rgba(0,0,0,0.04)
+    }
+    .gallery{
+      display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;
+      max-width:900px;margin:20px auto
+    }
+    .gallery img{
+      width:100%;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.06)
+    }
+    footer{
+      background:#0b2b13;color:#dff2d8;padding:16px;text-align:center;margin-top:18px;
+      border-top:4px solid var(--dirt)
+    }
+    .social a{
+      color:#fff;margin:0 8px;text-decoration:none;padding:6px 8px;border-radius:6px;background:rgba(0,0,0,0.12)
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">WISDOM NODES</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="server.html">Server</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Join the WISDOM NODES Server</h2>
+    <div class="server-ip">
+      <h3>Server IP: pms.mc-complex.com</h3>
+      <p>Online Players: <span id="onlineCount"></span></p>
+      <button onclick="copyIP()">Copy IP</button>
+    </div>
+
+    <h2>Server Features</h2>
+    <div class="features">
+      <div class="card"><strong>Survival & Creative Worlds</strong><p>Build and explore in vast worlds designed for all play styles.</p></div>
+      <div class="card"><strong>Custom Mini-Games & PvP</strong><p>Compete in unique arenas, tournaments, and minigames.</p></div>
+      <div class="card"><strong>Seasonal Events & Tournaments</strong><p>Holiday specials, challenges, and exclusive rewards.</p></div>
+      <div class="card"><strong>Player Shops & Economy</strong><p>Trade items, run a shop, and grow your in-game business.</p></div>
+      <div class="card"><strong>Powerful Anti-Grief Protection</strong><p>Our staff and plugins keep your builds safe.</p></div>
+      <div class="card"><strong>Friendly Staff & Active Discord</strong><p>Get help, share creations, and chat anytime.</p></div>
+    </div>
+
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="img1.png" alt="Server Image 1">
+      <img src="img2.png" alt="Server Image 2">
+    </div>
+  </main>
+
+  <footer>
+    <div>© <span id="year"></span> WISDOM NODES</div>
+    <div class="social" style="margin-top:8px">
+      <a href="https://discord.gg/4Qs6dpgD" target="_blank">Discord</a>
+      <a href="https://www.instagram.com/itz._aarib_zzz/" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@aryangaming-wr5ei?si=yS9prbEtBKg2yp91" target="_blank">YouTube</a>
+    </div>
+  </footer>
+
+  <script>
+    // Random online count
+    document.getElementById('onlineCount').textContent = Math.floor(Math.random()*50)+10;
+
+    // Copy IP to clipboard
+    function copyIP(){
+      navigator.clipboard.writeText('pms.mc-complex.com');
+      alert('Server IP copied!');
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
